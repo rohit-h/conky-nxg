@@ -2,10 +2,10 @@ Conky-NXG
 ---------
 
 Todo list:
- * clean up code
- * standardize paths
- * make installer
+[x] clean up code
+[x] standardize paths
+[x] make installer/uninstaller
 
 Future todo:
- * make a configurator (GUI?)
- * modularize subwidgets
+[ ] make a configurator (GUI?)
+[ ] modularize subwidgets
