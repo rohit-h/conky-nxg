@@ -91,7 +91,7 @@ if [ "$confirm" = "y" -o "$confirm" = "Y" ]; then
 
 	if [ -e "$HOME/.conkyrc" ]; then
 		echo " Default conky config file found. Backing it up"
-		mv -i "$HOME/.conkyrc" "$HOME/.conkyrc.old"
+		mv "$HOME/.conkyrc" "$HOME/.conkyrc.old"
 	fi
 	ln -s "$ConkyConf/conkyrc" "$HOME/.conkyrc"
 	sleep 1
