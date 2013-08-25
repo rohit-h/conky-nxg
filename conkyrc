@@ -1,4 +1,4 @@
-# Conky, a system monitor, based on torsmo
+# Conk, a system monitor, based on tors-mo
 
 alignment		top_left
 background		no
@@ -34,12 +34,12 @@ use_spacer		none
 show_graph_scale	no
 show_graph_range	no
 
-lua_load ~/.cache/conky_lunatico.lua
+lua_load ~/.conky/conky-nxg/desktop.lua
 lua_draw_hook_post main
 
 
 TEXT
 ${voffset 15}
-${image ~/.cache/back.png -p 0,0 -s 1366x150}${font Open Sans:size=8}${color #dddddd}${execp ~/.cache/weather.sh}
+${image ~/.conky/conky-nxg/back.png -p 0,0 -s 1366x150}${font Open Sans:size=8}${color #dddddd}${execp ~/.conky/conky-nxg/weather.sh}
 ${voffset -20}${offset 50}${font Open Sans Light:size=36}${time %I}${font Open Sans Light:size=18}${voffset -15}${time %M}${offset -25}${voffset 16}${font Open Sans Light:size=14}${time %P}${offset 70}${voffset -32}${font Open Sans Light:size=36}${time %d}${font Open Sans Light:size=18}${voffset -15}${time %m}${offset -25}${voffset 16}${font Open Sans Light:size=14}${time %a}${font}
-${voffset -10}${alignr}${offset -60}${execp ~/.cache/date.sh}
+${voffset -10}${alignr}${offset -60}${execp ~/.conky/conky-nxg/date.sh}

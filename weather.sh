@@ -1,24 +1,31 @@
 #!/bin/bash
 
+
+
+WeatherCache="$HOME/.conky/conky-nxg/weather.xml"
+WeatherURL="http://weather.yahooapis.com/forecastrss?w=29222422&u=c"
+
+
+
 if [ "$1" = "-u" ]; then
 	if ping -c 2 google.com 1>/dev/null ; then
 		echo 'updating...'
-		wget -qO ~/.cache/weather.xml 'http://weather.yahooapis.com/forecastrss?w=29222422&u=c'
+		wget -qO "$WeatherCache" "$WeatherURL"
 	fi
 	exit 0
 fi
 
-if [ ! -e ~/.cache/weather.xml ]; then
+if [ ! -e "$WeatherCache" ]; then
 	echo "Weather XML not found. Try running $0 -u"
 	exit 0
 fi
 
-LOCATION=`grep title ~/.cache/weather.xml | head -n 1 | cut -d '-' -f 2 | cut -d '<' -f 1`
+LOCATION=`grep title "$WeatherCache" | head -n 1 | cut -d '-' -f 2 | cut -d '<' -f 1`
 
-TODAY=`grep yweather:condition ~/.cache/weather.xml`
-LATER=`grep yweather:forecast ~/.cache/weather.xml | sed -n '1p'`
-TOMOR=`grep yweather:forecast ~/.cache/weather.xml | sed -n '2p'`
-DAYAF=`grep yweather:forecast ~/.cache/weather.xml | sed -n '3p'`
+TODAY=`grep yweather:condition "$WeatherCache"`
+LATER=`grep yweather:forecast "$WeatherCache" | sed -n '1p'`
+TOMOR=`grep yweather:forecast "$WeatherCache" | sed -n '2p'`
+DAYAF=`grep yweather:forecast "$WeatherCache" | sed -n '3p'`
 
 function getCode {
 	STRING="$@"
