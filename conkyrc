@@ -1,0 +1,45 @@
+# Conky, a system monitor, based on torsmo
+
+alignment		top_left
+background		no
+border_width		1
+cpu_avg_samples		5
+default_color		white
+default_outline_color	white
+default_shade_color	white
+double_buffer		yes
+draw_borders		no
+draw_graph_borders	yes
+draw_outline		no
+draw_shades		no
+use_xft			yes
+xftfont			Open Sans Light:size=9
+gap_x			0
+gap_y			0
+text_buffer_size	768
+minimum_size		1366 768
+net_avg_samples		2
+no_buffers		yes
+out_to_console		no
+out_to_stderr		no
+extra_newline		no
+own_window		yes
+own_window_class	Conky
+own_window_type		override
+own_window_transparent	yes
+stippled_borders	0
+update_interval		1
+uppercase		no
+use_spacer		none
+show_graph_scale	no
+show_graph_range	no
+
+lua_load ~/.cache/conky_lunatico.lua
+lua_draw_hook_post main
+
+
+TEXT
+${voffset 15}
+${image ~/.cache/back.png -p 0,0 -s 1366x150}${font Open Sans:size=8}${color #dddddd}${execp ~/.cache/weather.sh}
+${voffset -20}${offset 50}${font Open Sans Light:size=36}${time %I}${font Open Sans Light:size=18}${voffset -15}${time %M}${offset -25}${voffset 16}${font Open Sans Light:size=14}${time %P}${offset 70}${voffset -32}${font Open Sans Light:size=36}${time %d}${font Open Sans Light:size=18}${voffset -15}${time %m}${offset -25}${voffset 16}${font Open Sans Light:size=14}${time %a}${font}
+${voffset -10}${alignr}${offset -60}${execp ~/.cache/date.sh}
