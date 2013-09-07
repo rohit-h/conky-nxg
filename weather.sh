@@ -50,6 +50,6 @@ TMP2=`getTemps $TOMOR`
 TMP3=`getTemps $DAYAF`
 
 echo -n '${offset 975}${font Open Sans Light:size=16}weather${font Open Sans:size=8}${offset 60}${voffset -8}NOW${offset 40}LATER${offset 45}TOM${offset 35}DAY AFT${offset -350}${voffset 20}'$LOCATION
-echo '${image ~/.weathericons/'$PIC0'.png -s 32x32 -p 1110,55}${image ~/.weathericons/'$PIC1'.png -s 32x32 -p 1180,55}${image ~/.weathericons/'$PIC2'.png -s 32x32 -p 1250,55}${image ~/.weathericons/'$PIC3'.png -s 32x32 -p 1320,55}'
+echo '${image ~/.conky/conky-nxg/weathericons/'$PIC0'.png -s 32x32 -p 1110,55}${image ~/.conky/conky-nxg/weathericons/'$PIC1'.png -s 32x32 -p 1180,55}${image ~/.conky/conky-nxg/weathericons/'$PIC2'.png -s 32x32 -p 1250,55}${image ~/.conky/conky-nxg/weathericons/'$PIC3'.png -s 32x32 -p 1320,55}'
 echo -n "\${voffset 20}\${offset 1115}$TMP0 C\${offset 40}$TMP1\${offset 33}$TMP2\${offset 33}$TMP3"
 
