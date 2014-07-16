@@ -20,4 +20,4 @@ A basic install/uninstall script has been written. Mark them as executable and r
 
 Screenshot
 ==========
-![Screenshot](http://github.com/rohit-h/conky-nxg/preview.png)
+![Screenshot](https://raw.githubusercontent.com/rohit-h/conky-nxg/master/preview.png)
